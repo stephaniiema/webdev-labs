@@ -32,7 +32,50 @@ const initializeConnection = ev => {
         const data = JSON.parse(e.data);
         console.log(data);
 
-        /***********************************************************
+        switch(data.type) {
+            case "login":
+                //do something
+                console.log("A user just connected:", data);
+                yourJob.showUsers(data);
+                break;
+            case "disconnect":
+                //do something
+                console.log("A user just disconnected", data);
+                yourJob.showUsers(data);
+                break;
+            case "chat":
+                //do something
+                yourJob.showChat(data);
+                break;
+            default:
+                console.error("Message type not recognized");
+                console.log(data);
+                break;
+        }
+    };
+};
+
+const yourJob = {
+    showUsers: data => {
+        qs("#users-list").innerHTML=`
+        <ul>
+            <li>
+            ${data.users.join('</li><li>')}
+            </li>
+        </ul>`;
+    },
+
+    showChat : data => {
+        if(data.username === username) {
+            qs("#chat").insertAdjacentHTML("beforeend",
+            `<div class="right"><strong>You:</strong>${data.text}</div>`);
+        }else{
+            qs("#chat").insertAdjacentHTML("beforeend",
+            `<div class="left"><strong>${data.username}</strong>${data.text}</div>`);
+        }
+    }
+}
+/***********************************************************
          * Client-Side Logic: Your Job 
          ***********************************************************
          * Respond to the messages that are sent back to the server:
@@ -44,10 +87,6 @@ const initializeConnection = ev => {
          *   2. If data.type is "chat", append the chat message 
          *      to the #chat div (main panel).
          ************************************************************/
-
-    };
-};
-
 
 // code that sends messages to the server:
 const notify = {
