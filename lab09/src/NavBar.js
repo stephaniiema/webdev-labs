@@ -1,16 +1,15 @@
 import React from 'react';
+import { getHeaders } from './utils';
 
 class NavBar extends React.Component {  
 
     constructor(props) {
         super(props);
-        // constructor logic
-        console.log('NavBar component created');
     }
 
     componentDidMount() {
         // fetch posts
-        console.log('NavBar component mounted');
+        // console.log('NavBar component mounted');
     }
 
     render () {
@@ -19,7 +18,7 @@ class NavBar extends React.Component {
                 <h1>{this.props.title}</h1>
                 <ul>   
                     <li><a href="/api">API Docs</a></li>
-                    <li><span>{this.props.username}</span></li>
+                    <li><span>{this.props.user.username}</span></li>
                     <li><a href="/logout">Sign out</a></li>
                 </ul> 
             </nav>       
