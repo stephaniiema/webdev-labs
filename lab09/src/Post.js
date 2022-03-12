@@ -10,7 +10,7 @@ class Post extends React.Component {
         this.state={
             model: this.props.model
         }
-        console.log(this.state.model); 
+        // console.log(this.state.model); 
         this.requeryPost = this.requeryPost.bind(this)
         
     }

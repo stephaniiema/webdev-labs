@@ -17,7 +17,7 @@ class Profile extends React.Component {
         const altText= this.props.user.username + '\'s profile picture'
         return (
             <header id="myprofile">
-                <img class="pic" src={this.props.user.thumb_url} alt={altText} />
+                <img className="pic" src={this.props.user.thumb_url} alt={altText} />
                 <h2>{this.props.user.username}</h2>
             </header>
         );
