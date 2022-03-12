@@ -21,7 +21,7 @@ class App extends React.Component {
             <div>
                 <NavBar title="Photo App" user={this.state.user}/>
                 <aside>
-                    <Profile />
+                    <Profile user={this.state.user}/>
                     <Suggestions />
                 </aside>
 

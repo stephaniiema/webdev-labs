@@ -14,8 +14,12 @@ class Profile extends React.Component {
     }
 
     render () {
+        const altText= this.props.user.username + '\'s profile picture'
         return (
-            <header>empty profile.</header>  
+            <header id="myprofile">
+                <img class="pic" src={this.props.user.thumb_url} alt={altText} />
+                <h2>{this.props.user.username}</h2>
+            </header>
         );
     }
 }
