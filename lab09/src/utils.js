@@ -52,12 +52,12 @@ export function getHeaders () {
     let headers;
     if (csrf_access_token) {
         headers = {
-            'Content-Type': 'application/json',
+            // 'Content-Type': 'application/json',
             'X-CSRF-TOKEN': csrf_access_token
         };
     } else if (access_token_cookie) {
         headers = {
-            'Content-Type': 'application/json',
+            // 'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + access_token_cookie
         };
     } else {

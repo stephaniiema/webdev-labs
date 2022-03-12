@@ -5,7 +5,9 @@ class LikeButton extends React.Component {
 
     constructor(props) {
         super(props);
-
+        // data we need: 
+        // 1. whether current post is liked or unliked
+        // 2. which post to like/unlike (postid)
         this.likeUnlike = this.likeUnlike.bind(this);
         this.like = this.like.bind(this);
         this.unlike = this.unlike.bind(this);
@@ -37,14 +39,25 @@ class LikeButton extends React.Component {
 
     unlike () {
         console.log('unlike');
-
+        const postId = this.props.postId;
+        const likeId= this.props.likeId;
+        fetch('/api/posts/' + postId + '/likes/' + likeId, {
+            headers: getHeaders(),
+            method: "DELETE"
+        }).then(response => response.json())
+        .then(data => {
+            console.log(data);
+            // calling the parent Component (Post's) function.
+            this.props.requeryPost();
+        })
     }
 
     render () {
         const likeId = this.props.likeId;
         return (
             <button 
-                onClick={ this.likeUnlike }>
+                onClick={ this.likeUnlike }
+                aria-checked={ likeId ? true : false}>
                 <i className={ likeId ? 'fas fa-heart' : 'far fa-heart'}></i>
             </button>
         ); 
