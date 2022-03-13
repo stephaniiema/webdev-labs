@@ -1,6 +1,7 @@
 import React from 'react';
 import LikeButton from './LikeButton';
 import BookmarkButton from './BookmarkButton';
+import Comments from './Comments'
 import {getHeaders} from './utils.js';
 
 class Post extends React.Component { 
@@ -46,18 +47,40 @@ class Post extends React.Component {
                     height="300" />
                 
                 <div className="info">
-                    <div>
-                        <LikeButton 
-                            likeId={post.current_user_like_id}
-                            postId={post.id}
-                            requeryPost={this.requeryPost} />
-                        
-                        <BookmarkButton 
-                            bookmarkId={post.current_user_bookmark_id}
-                            postId={post.id}
-                            requeryPost={this.requeryPost} />
+                    <div className="buttons">
+                        <div>
+                            <LikeButton 
+                                likeId={post.current_user_like_id}
+                                postId={post.id}
+                                requeryPost={this.requeryPost} />
+                            
+                            <i class="far fa-comment"></i>
+                            <i class="far fa-paper-plane"></i>
+                        </div>
+                        <div>    
+                            <BookmarkButton 
+                                bookmarkId={post.current_user_bookmark_id}
+                                postId={post.id}
+                                requeryPost={this.requeryPost} />
+                        </div>
                     </div>
-                    <p>{ post.caption }</p>
+                    <p className='likes'>
+                        <strong>
+                            {this.state.model.likes.length} like{this.state.model.likes.length == 1 ? "" : "s"}
+                        </strong>
+                    </p>
+                    <div className='caption'>
+                        <p>
+                            <strong>{this.state.model.user.username}</strong>
+                            {this.state.model.caption}
+                        </p>
+                        <p className='timestamp'>
+                            {this.state.model.display_time}
+                        </p>
+                    </div>
+                    <div className='comments'>
+                        <Comments comments={this.state.model.comments}/>
+                    </div>
                 </div>
             </section> 
         ); 

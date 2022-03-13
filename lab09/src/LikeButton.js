@@ -55,7 +55,7 @@ class LikeButton extends React.Component {
     render () {
         const likeId = this.props.likeId;
         return (
-            <button 
+            <button className='like' 
                 onClick={ this.likeUnlike }
                 aria-checked={ likeId ? true : false}>
                 <i className={ likeId ? 'fas fa-heart' : 'far fa-heart'}></i>

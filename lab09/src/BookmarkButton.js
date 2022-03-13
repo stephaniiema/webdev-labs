@@ -58,6 +58,7 @@ class BookmarkButton extends React.Component {
         const bookmarkId = this.props.bookmarkId;
         return (
             <button 
+                className='bookmark'
                 onClick={ this.toggleBookmark }
                 aria-checked={ bookmarkId ? true : false}>
                 <i className={ bookmarkId ? 'fas fa-bookmark' : 'far fa-bookmark'}></i>
