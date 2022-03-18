@@ -7,7 +7,7 @@ class Comments extends React.Component {
 
     render () {
         if(this.props.comments.length != 0){
-            const lastComment=this.props.comments[0];
+            const lastComment=this.props.comments[this.props.comments.length-1];
             return (
                 <div>
                     <p>
@@ -15,7 +15,7 @@ class Comments extends React.Component {
                         {lastComment.text}
                     </p>
                     <p className='timestamp'>
-                        timestamp goes here
+                        {lastComment.display_time}
                     </p>
                 </div>
             )

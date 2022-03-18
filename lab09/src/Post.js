@@ -3,6 +3,7 @@ import LikeButton from './LikeButton';
 import BookmarkButton from './BookmarkButton';
 import Comments from './Comments'
 import {getHeaders} from './utils.js';
+import AddComment from './AddComment.js';
 
 class Post extends React.Component { 
 
@@ -78,10 +79,15 @@ class Post extends React.Component {
                             {this.state.model.display_time}
                         </p>
                     </div>
+                    {this.state.model.comments.length > 1 ? 
+                    <button class="link">View all {this.state.model.comments.length} comments</button> : null}
                     <div className='comments'>
                         <Comments comments={this.state.model.comments}/>
                     </div>
                 </div>
+                <AddComment 
+                    postId={post.id}
+                    requeryPost={this.requeryPost}/>
             </section> 
         ); 
     }
