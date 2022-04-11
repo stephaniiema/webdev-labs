@@ -1,5 +1,9 @@
 # Labs for NU CS 396 Introduction to Web Development
-Includes concept practice and partial implementations of various elements of PhotoApp, an imitation of Instagram.
+Includes concept practice and partial implementations of various elements of PhotoApp.
+
+## PhotoApp
+
+PhotoApp is a photo sharing app inspired by Instagram. Functionality includes: following/unfollowing users from the sidebar, liking/unliking posts,  bookmarking/unbookmaking posts, commenting on posts, and a modal display which shows all of the comments under a post. A user must log in and can only see their own posts and posts from accounts they are following.
 
 For the result of the full implementation see http://stephaniema-photo-app.herokuapp.com/ (username: webdev, password: password).
 
