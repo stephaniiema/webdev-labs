@@ -1,0 +1,8 @@
+<section class="stories-tab">
+    {% for story in stories %}
+    <section class="individual-story">
+        <img src={{ story.get('user').get('profile_url') }} width="75" height="75" alt= "{{story.get('user').get('username')}}'s profile picture">
+        <p>{{ story.get('user').get('username') }}</p>
+    </section>
+    {% endfor %}
+</section>

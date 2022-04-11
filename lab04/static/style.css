@@ -1,0 +1,295 @@
+body{
+    background-color: rgba(244,237,224,255);
+}
+title, h1, h2, h3, h4 {
+    font-family: 'Comfortaa', cursive;
+}
+
+body p{
+    font-family: sans-serif;
+}
+
+/* nav bar */
+header {
+    display: flex;  
+    justify-content: space-between;
+    vertical-align: middle;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    background-color: white;
+}
+
+header>* {
+    margin: 20px;
+}
+header section {
+    display: flex;
+    align-items: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 50%;
+}
+
+header button{
+    height: 100%;
+    background-color: white;
+    border: none;
+}
+
+#signout {
+    color: blue;
+    text-decoration: underline;
+}
+
+
+/* stories */
+.stories-tab{
+    margin: 87px 40% 0 auto;
+    border: none;
+    width: 700px;
+    display: block;
+    background-color: white;
+
+}
+.stories-tab img {
+    border-radius: 50%;
+    border: thin solid black;
+    margin: 10px;
+    
+}
+.stories-tab p{
+    border: none;
+    margin: 0px 0px 0px 17px;
+    font-family: sans-serif;
+}
+.individual-story{
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 75px;
+    font-size: 10pt;
+    margin: 10px;
+}
+
+/* recommendations */
+
+aside {
+    margin-top: 75px;
+    width: 40vw;
+    /* border-style: solid; */
+    float:right;
+    position:fixed;
+    bottom:0;
+    top:0;
+    right:0;
+    background-color: rgba(244,237,224,255);
+}
+
+aside h2 {
+    width:auto; 
+    height:auto;  
+}
+
+aside img {
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+}
+
+#myprofile {
+    display: flex;
+    /* border-style: solid; */
+}
+
+#myprofile * {
+    display:flex;
+    margin: 10px;
+    vertical-align: middle;
+}
+#myprofile h2 {
+    height: 75%;
+    margin-top: 40px;
+    margin-bottom: 46.5px;
+    font-size: 16pt;
+}
+
+#suggestions *{
+    /* border-style: solid; */
+    display:flex;
+}
+
+#suggestions img{
+    height:50px;
+    width:50px;
+    margin-left: 20px;
+}
+#suggestions h3{
+    color: rgb(92, 91, 91);
+    margin-left: 20px;
+    margin-top: 0;
+}
+
+.sugg-description{
+    width: 200px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+.sugg-description p{
+    width:100%;
+    margin:0;
+}
+
+.username {
+    font-size: 12pt;
+    margin-left:0;
+}
+.sforyou {
+    font-size:10pt;
+    color: rgb(92, 91, 91);
+    margin-left:0;
+}
+
+.profile-rec button{
+    height: 100%;
+    color: blue;
+    background-color: rgba(244,237,224,255);
+    border-style: none;
+    margin-top: 20px;
+}
+
+.profile-rec {
+    margin-bottom: 20px;
+}
+
+
+/* card */
+
+.card-body{
+    border: thin solid gray;
+    margin: 20px 40% 0 auto;
+    width: 700px;
+    background-color: white;
+}
+
+.card-heading{
+    /* width: calc(50% -50px);  */
+    width: 700px;
+    padding: 10px 0 0 10px;  
+    display:flex;  
+    justify-content: left;        
+}
+
+.card-heading h4{
+width: 640px;
+float: left;
+}
+
+.card-heading i{
+    display:inline;
+    margin-top:10px;
+}
+
+
+.card-body img{
+    width: 700px;
+    height: 525px;
+}
+
+.card-icons{
+    margin-top: 20px;
+    align-items: flex-start;
+    justify-content: space-between;
+    display: flex;
+    width: 680px;
+}
+
+.card-body i{
+    padding: 0px 3px;
+    margin-left: 11px;
+}
+
+.card-body p{
+    font-family: sans-serif;
+    margin: 15px;
+}
+
+/* .add-comment-box *{
+    display: inline-block;
+} */
+
+.add-comment-box{
+    /* display: flex;
+    justify-content: space-evenly; */
+    text-align:center;
+    border-style: solid;
+    border-width: thin;
+    border-color: gray;
+    /* padding: 5px; */
+} 
+
+.add-comment-box * {
+    margin-top: 5px;
+}
+
+.add-comment-box i{
+    float: left;
+}
+
+.add-comment-box p{
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.add-comment-box button{
+    float: right;
+    background-color: white;
+    color: #4F4F4Fx;
+    border-style: none;
+    margin-right: 10px;
+}
+
+@media (max-width: 1166px) {
+    /* .card-body{
+        width:100%;
+    }
+    .card-body img{
+        width: 100vw;
+        height: 75vw;
+    }
+    .stories-tab{
+        width:100%;
+    } */
+    .entire-card {
+        width: 100vw;
+    }
+
+    aside {
+        display: none;
+    }
+ }
+
+ @media (min-width: 481px) and (max-width:1166px) {
+    /* body {
+        margin-left: 0;
+    }
+    .card-body{
+        width: 60vw;
+    }
+    .card-body img{
+        width: 60vw;
+        height: 45vw;
+    }
+    .stories-tab{
+        width:100%;
+    } */
+
+    .entire-card {
+        width: 60vw;
+    }
+ }
+ 

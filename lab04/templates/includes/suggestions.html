@@ -1,0 +1,23 @@
+<aside>
+    <section id="myprofile">
+        <img src={{ user.get('profile_url') }} alt="{{user.get('username')}}'s profile picture">
+        <h2>{{ user.get('username') }}</h2>
+    </section>
+   
+    <section id="suggestions">
+        <h3>Suggestions for you</h3>
+        {% for suggested in suggestions %}
+        
+        <section class="profile-rec">
+            <img src={{ suggested.get('profile_url')}} alt="{{suggested.get('username')}}'s profile picture">
+            <section class="sugg-description">
+                <p class="username">
+                    <b>{{ suggested.get('username')}}</b>
+                </p>
+                <p class="sforyou">suggested for you</p>
+            </section>
+            <button class="follow">follow</button>
+        </section>
+        {% endfor %}
+    </section>
+</aside>
